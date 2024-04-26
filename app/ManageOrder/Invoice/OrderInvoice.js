@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import logo from "../../../public/sbt.png";
-import React, { useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import { Button } from "@nextui-org/react";
 export default function OrderInvoice({ order }) {
   const componentRef = useRef(null);
@@ -12,19 +12,21 @@ export default function OrderInvoice({ order }) {
   });
   return (
     <>
-
-      <div ref={componentRef} class="max-w-3xl mx-auto p-6 bg-white rounded shadow-sm my-6">
+      <div
+        ref={componentRef}
+        class="max-w-3xl mx-auto p-6 bg-white rounded shadow-sm my-6"
+      >
         <div class="grid grid-cols-2 items-center">
           <div>
             {/* <!--  Company logo  --> */}
-            <Image src={logo} width={0} height={0} className="w-24" />
+            <h1>Electronics.</h1>
           </div>
 
           <div class="text-right">
-            <p>Smart Soil Booster Technology.Pvt.Ltd.</p>
-            <p class="text-gray-500 text-sm">soilbooster717@gmail.com</p>
+            <p>Electronics.Pvt.Ltd.</p>
+            <p class="text-gray-500 text-sm">Electronics@gmail.com</p>
             <p class="text-gray-500 text-sm mt-1">
-              +91-9822688926/+91-9730866263
+              +91-9768497689/+91-9760866263
             </p>
           </div>
         </div>
@@ -45,7 +47,9 @@ export default function OrderInvoice({ order }) {
                       <span>{i.city}</span>
                       <span>{i.pincode}</span>
                       <span>{i.deliveryAddress}</span>
-                      <span className="text-sm font-bold text-black">+91{i.referenceMobileNumber}</span>
+                      <span className="text-sm font-bold text-black">
+                        +91{i.referenceMobileNumber}
+                      </span>
                     </p>
                   </>
                 );
@@ -194,7 +198,7 @@ export default function OrderInvoice({ order }) {
         <div class="border-t-2 pt-4 text-xs text-gray-500 text-center mt-16">
           Thank you for Purchase !
         </div>
-      </div >
+      </div>
       <div className="flex justify-center items-center ">
         <Button onClick={handlePrint}>Print Invoice</Button>
       </div>

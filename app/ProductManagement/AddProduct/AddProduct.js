@@ -174,9 +174,6 @@ export default function AddProduct({ refetch }) {
       errors.description = "Description is required";
     }
 
-    if (!productData.praman.trim()) {
-      errors.praman = "Praman is required";
-    }
     if (!productData.type.trim()) {
       errors.type = "type of product is required";
     }
@@ -184,14 +181,21 @@ export default function AddProduct({ refetch }) {
     if (productData.stock.length < 1) {
       errors.stock = "Minimum 10 stock reqiured !";
     }
-    if (!productData.form) {
-      errors.form = "please type solid or liquid !";
-    }
+
     setValidationErrors(errors);
 
     return Object.keys(errors).length === 0;
   };
-
+  const img = [
+    { value: "Air Conditioner", name: "Air Conditioner" },
+    { value: "Laptops", name: "Laptops" },
+    { value: "Televisions", name: "Televisions" },
+    { value: "Camera", name: "Camera" },
+    { value: "Earbuds", name: "Earbuds" },
+    { value: "Printer", name: "Printer" },
+    { value: "Personal Care", name: "Personal Care" },
+    { value: "Home Appliances", name: "Home Appliances" },
+  ];
 
   return (
     <>
@@ -199,7 +203,7 @@ export default function AddProduct({ refetch }) {
       <div className="flex flex-wrap gap-3">
         {sizes.map((size) => (
           <Button
-            className=" bg-teal-500 text-white  font-semibold"
+            className=" bg-black text-white  font-semibold"
             key={size}
             onPress={() => handleOpen(size)}
           >
@@ -309,7 +313,7 @@ export default function AddProduct({ refetch }) {
                       )}
                     </div>
 
-                    <div>
+                    {/* <div>
                       <label
                         className="block text-gray-700 text-sm font-bold mb-2"
                         htmlFor="form"
@@ -332,7 +336,7 @@ export default function AddProduct({ refetch }) {
                           {validationErrors.form}
                         </p>
                       )}
-                    </div>
+                    </div> */}
 
                     <div>
                       <label
@@ -371,15 +375,13 @@ export default function AddProduct({ refetch }) {
                         className="block py-2.5  w-full text-sm text-black font-bold bg-transparent rounded-lg border-2 p-2 border-black appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:border-red-500 peer"
                       >
                         <option value="">Select Type</option>
-                        <option value="soil">soil</option>
-                        <option value="plant">plant</option>
-                        <option value="insectiside">insectiside</option>
-                        <option value="pesticide">pesticide</option>
-                        <option value="fungicide">fungicide</option>
-
-                        <option value="herbicide">herbicide</option>
-                        <option value="organic">organic</option>
-                        <option value="cow">cow</option>
+                        {img?.map((i) => {
+                          return (
+                            <>
+                              <option value={i?.value}>{i?.name}</option>
+                            </>
+                          );
+                        })}
                       </select>
 
                       {validationErrors.type && (
@@ -411,7 +413,7 @@ export default function AddProduct({ refetch }) {
                       )}
                     </div>
 
-                    <div>
+                    {/* <div>
                       <label
                         className="block text-gray-700 text-sm font-bold mb-2"
                         htmlFor="praman"
@@ -431,7 +433,7 @@ export default function AddProduct({ refetch }) {
                           {validationErrors.praman}
                         </p>
                       )}
-                    </div>
+                    </div> */}
                   </div>
                   {/* 
               <div>
@@ -456,7 +458,7 @@ export default function AddProduct({ refetch }) {
                 )}
               </div> */}
                   <div className="grid grid-cols-3 gap-6 bg-white shadow-md w-full rounded p-2 mb-4">
-                    <div className="col-span-2">
+                    {/* <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
                         Add ingredients:
                       </label>
@@ -475,7 +477,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteingred(index)}
-                            className="btn bg-red-500 hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -484,15 +486,15 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddingred}
-                        className="btn bg-teal-500 text-white font-semibold hover:bg-teal-400 btn-sm"
+                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
                       >
                         Add +
                       </Button>
-                    </div>
+                    </div> */}
 
                     <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
-                        Quantity (kg/LTR):
+                        Quantity (Qnt):
                       </label>
                       {productData?.Quantity?.map((Quantity, index) => (
                         <div key={index} className="flex items-center mb-2">
@@ -506,7 +508,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteQuantity(index)}
-                            className="btn bg-red-500 hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -515,7 +517,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddQuantity}
-                        className="btn bg-teal-500 text-white font-semibold hover:bg-teal-400 btn-sm"
+                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
                       >
                         Add +
                       </Button>
@@ -537,7 +539,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeletepricelist(index)}
-                            className="btn bg-red-500 hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -546,13 +548,13 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddpricelist}
-                        className="btn bg-teal-500 text-white font-semibold hover:bg-teal-400 btn-sm"
+                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
                       >
                         Add +
                       </Button>
                     </div>
 
-                    <div className="col-span-2">
+                    {/* <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
                         Advantages:
                       </label>
@@ -568,7 +570,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteAdvantage(index)}
-                            className="btn bg-red-500 hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -577,11 +579,11 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddAdvantage}
-                        className="btn bg-teal-500 text-white font-semibold hover:bg-teal-400 btn-sm"
+                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
                       >
                         Add +
                       </Button>
-                    </div>
+                    </div> */}
 
                     <div className="col-span-2">
                       <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -599,7 +601,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteReview(index)}
-                            className="btn bg-red-500 hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -608,7 +610,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddReview}
-                        className="btn bg-teal-500 text-white font-semibold hover:bg-teal-400 btn-sm"
+                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
                       >
                         Add +
                       </Button>
@@ -623,14 +625,14 @@ export default function AddProduct({ refetch }) {
                           <input
                             onChange={(e) => handleImageChange(index, e)}
                             value={image}
-                            maxLength="100"
+                            maxLength=""
                             autoComplete="off"
                             className="block py-2.5  w-full text-sm text-black font-bold bg-transparent rounded-lg border-2 p-2 border-black appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:border-red-500"
                           />
                           <Button
                             size="sm"
                             onClick={() => handleDeleteImage(index)}
-                            className="btn bg-red-500 hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -639,7 +641,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddImage}
-                        className="btn bg-teal-500 text-white font-semibold hover:bg-teal-400 btn-sm"
+                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
                       >
                         Add +
                       </Button>
@@ -653,9 +655,16 @@ export default function AddProduct({ refetch }) {
                 </Button>
                 <Button
                   onClick={() =>
-                    DataSender(event, productData, validateInputs, refetch, setProductData, onClose)
+                    DataSender(
+                      event,
+                      productData,
+                      validateInputs,
+                      refetch,
+                      setProductData,
+                      onClose
+                    )
                   }
-                  className=" bg-teal-500 hover:bg-teal-400 text-white font-semibold "
+                  className=" bg-red-500 hover:bg-black text-white font-semibold "
                 >
                   Add Product
                 </Button>

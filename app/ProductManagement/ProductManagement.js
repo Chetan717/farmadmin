@@ -63,7 +63,7 @@ export default function ProductManagement() {
         pauseOnHover
         theme="light"
       />
-      <div className="flex flex-col mt-2 gap-10 justify-center items-center">
+      <div className="flex flex-col mt-2 gap-10 justify-start items-start">
         <AddProduct refetch={refetch} />
         <ProductList
           data={data?.products?.Data}
