@@ -187,14 +187,13 @@ export default function AddProduct({ refetch }) {
     return Object.keys(errors).length === 0;
   };
   const img = [
-    { value: "Air Conditioner", name: "Air Conditioner" },
-    { value: "Laptops", name: "Laptops" },
-    { value: "Televisions", name: "Televisions" },
-    { value: "Camera", name: "Camera" },
-    { value: "Earbuds", name: "Earbuds" },
-    { value: "Printer", name: "Printer" },
-    { value: "Personal Care", name: "Personal Care" },
-    { value: "Home Appliances", name: "Home Appliances" },
+    { value: "Vegetable", name: "Vegetable" },
+    { value: "Fruits", name: "Fruits" },
+    { value: "Exotiic Vegetable", name: "Exotiic Vegetable" },
+    { value: "Sprout", name: "Sprout" },
+    { value: "Chopped", name: "Chopped" },
+    { value: "Pulses", name: "Pulses" },
+    { value: "Organic", name: "Organic" },
   ];
 
   return (
@@ -203,7 +202,7 @@ export default function AddProduct({ refetch }) {
       <div className="flex flex-wrap gap-3">
         {sizes.map((size) => (
           <Button
-            className=" bg-black text-white  font-semibold"
+            className=" bg-[#476F00] text-white  font-semibold"
             key={size}
             onPress={() => handleOpen(size)}
           >
@@ -477,7 +476,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteingred(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -486,7 +485,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddingred}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -508,7 +507,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteQuantity(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -517,7 +516,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddQuantity}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -539,7 +538,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeletepricelist(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -548,7 +547,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddpricelist}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -570,7 +569,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteAdvantage(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -579,7 +578,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddAdvantage}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -601,7 +600,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteReview(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -610,7 +609,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddReview}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -632,7 +631,7 @@ export default function AddProduct({ refetch }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteImage(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -641,7 +640,7 @@ export default function AddProduct({ refetch }) {
                       <Button
                         size="sm"
                         onClick={handleAddImage}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -664,7 +663,7 @@ export default function AddProduct({ refetch }) {
                       onClose
                     )
                   }
-                  className=" bg-red-500 hover:bg-black text-white font-semibold "
+                  className=" bg-red-500 hover:bg-[#476F00] text-white font-semibold "
                 >
                   Add Product
                 </Button>

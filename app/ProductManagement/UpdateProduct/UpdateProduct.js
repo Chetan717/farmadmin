@@ -192,6 +192,16 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
     setProductData({ ...productData, image: images });
   };
 
+  const img = [
+    { value: "Vegetable", name: "Vegetable" },
+    { value: "Fruits", name: "Fruits" },
+    { value: "Exotiic Vegetable", name: "Exotiic Vegetable" },
+    { value: "Sprout", name: "Sprout" },
+    { value: "Chopped", name: "Chopped" },
+    { value: "Pulses", name: "Pulses" },
+    { value: "Organic", name: "Organic" },
+  ];
+
   return (
     <>
       <div className="flex flex-wrap gap-3">
@@ -370,22 +380,20 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                         className="block py-2.5  w-full text-sm text-black font-bold bg-transparent rounded-lg border-2 p-2 border-black appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:border-red-500 peer"
                       >
                         <option value="">Select Type</option>
-                        <option value="soil">soil</option>
-                        <option value="plant">plant</option>
-                        <option value="insectiside">insectiside</option>
-                        <option value="pesticide">pesticide</option>
-                        <option value="fertilizer">fertilizer</option>
-                        <option value="fungicide">fungicide</option>
-
-                        <option value="herbicide">herbicide</option>
-                        <option value="organic">organic</option>
-                        <option value="cow">cow</option>
+                        {img?.map((i) => {
+                          return (
+                            <>
+                              <option value={i?.value}>{i?.name}</option>
+                            </>
+                          );
+                        })}
                       </select>
-                      {/* {validationErrors.type && (
+
+                      {validationErrors.type && (
                         <p className="text-red-500 text-xs mt-1">
                           {validationErrors.type}
                         </p>
-                      )} */}
+                      )}
                     </div>
 
                     <div>
@@ -474,7 +482,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteingred(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -483,7 +491,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       <Button
                         size="sm"
                         onClick={handleAddingred}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -505,7 +513,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteQuantity(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -514,7 +522,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       <Button
                         size="sm"
                         onClick={handleAddQuantity}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -536,7 +544,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeletepricelist(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -545,7 +553,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       <Button
                         size="sm"
                         onClick={handleAddpricelist}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -567,7 +575,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteAdvantage(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -576,7 +584,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       <Button
                         size="sm"
                         onClick={handleAddAdvantage}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -598,7 +606,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteReview(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -607,7 +615,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       <Button
                         size="sm"
                         onClick={handleAddReview}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -629,7 +637,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                           <Button
                             size="sm"
                             onClick={() => handleDeleteImage(index)}
-                            className="btn bg-black hover:bg-red-400 btn-sm ml-2"
+                            className="btn bg-[#476F00] hover:bg-red-400 btn-sm ml-2"
                           >
                             Delete
                           </Button>
@@ -638,7 +646,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                       <Button
                         size="sm"
                         onClick={handleAddImage}
-                        className="btn bg-black text-white font-semibold hover:bg-black btn-sm"
+                        className="btn bg-[#476F00] text-white font-semibold hover:bg-[#476F00] btn-sm"
                       >
                         Add +
                       </Button>
@@ -652,7 +660,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
                 </Button>
                 <Button
                   onClick={() => DataSender(productData, productId, refechData)}
-                  className=" bg-black hover:bg-black text-white font-semibold "
+                  className=" bg-[#476F00] hover:bg-[#476F00] text-white font-semibold "
                 >
                   Update Product
                 </Button>

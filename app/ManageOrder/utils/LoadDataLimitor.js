@@ -25,14 +25,14 @@ export default function LoadDataLimitor({
         <Button
           onClick={() => CallMoreData(TotalData, setLast, last)}
           size="md"
-          className="bg-black text-white"
+          className="bg-[#476F00] text-white"
         >
           Load More
         </Button>
         <Button
           onClick={() => GetAllData(TotalData)}
           size="md"
-          className="bg-black text-white"
+          className="bg-[#476F00] text-white"
         >
           {`Get All(${TotalData})`}
         </Button>

@@ -19,14 +19,14 @@ export default function OrderInvoice({ order }) {
         <div class="grid grid-cols-2 items-center">
           <div>
             {/* <!--  Company logo  --> */}
-            <h1>Electronics.</h1>
+            <h1>farm fresh Marketfresh Market</h1>
           </div>
 
           <div class="text-right">
-            <p>Electronics.Pvt.Ltd.</p>
-            <p class="text-gray-500 text-sm">Electronics@gmail.com</p>
+            <p>farm fresh Market.Pvt.Ltd.</p>
+            <p class="text-gray-500 text-sm">freshMarket@gmail.com</p>
             <p class="text-gray-500 text-sm mt-1">
-              +91-9768497689/+91-9760866263
+              +91-97455468497/+91-9765867263
             </p>
           </div>
         </div>
