@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "@nextui-org/react";
@@ -51,7 +51,6 @@ export default function SignIn() {
   // const [SignInUser, { data, loading, error }] = useMutation(SIGNIN);
 
   const HandleLogin = async (login, event, SIGNIN, onClose) => {
-
     event.preventDefault();
 
     if (!isEmailValid(login.email) && login.email.lenth === 0) {
@@ -80,16 +79,16 @@ export default function SignIn() {
         const data = res?.data?.data?.SignInUser;
 
         if (data?.User.acctype === "admin") {
-          localStorage.setItem("user", JSON.stringify(data?.User))
-          toast.success(`${data?.message}`)
+          localStorage.setItem("user", JSON.stringify(data?.User));
+          toast.success(`${data?.message}`);
           setTimeout(() => {
-            window.location.reload()
-          }, 1000)
+            window.location.reload();
+          }, 1000);
         }
 
-        toast.error(data?.error?.message)
+        toast.error(data?.error?.message);
       })
-      .catch((err) => { })
+      .catch((err) => {})
       .finally(() => {
         setLoad(false);
         setLogin({
@@ -97,7 +96,6 @@ export default function SignIn() {
           password: "",
         });
       });
-
   };
   const showToast = (message) => {
     toast.error(message, {
@@ -122,7 +120,10 @@ export default function SignIn() {
       <ToastContainer />
       <div class="p-5 flex flex-col justify-center items-center h-screen  rounded-lg   ">
         <h3 class="my-4 text-2xl font-semibold text-gray-700">Admin Login</h3>
-        <form action="#" class="flex flex-col space-y-5 border p-10 border-gray-100">
+        <form
+          action="#"
+          class="flex flex-col space-y-5 border p-10 border-gray-100"
+        >
           <div class="flex flex-col space-y-1">
             <label for="email" class="text-xs font-semibold text-gray-500">
               Email address
@@ -190,7 +191,7 @@ export default function SignIn() {
             </Button>
           ) : (
             <Button
-              className="font-semibold text-sm text-white transition-colors duration-300 bg-[#00DDB8]"
+              className="font-semibold text-sm text-white transition-colors duration-300 bg-[#476F00]"
               onClick={(event) => HandleLogin(login, event, SIGNIN)}
             >
               Login
