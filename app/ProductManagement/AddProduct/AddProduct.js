@@ -193,7 +193,7 @@ export default function AddProduct({ refetch }) {
     { value: "Sprout", name: "Sprout" },
     { value: "Chopped", name: "Chopped" },
     { value: "Pulses", name: "Pulses" },
-    { value: "Organic", name: "Organic" },
+    { value: "Dryfruit", name: "Dryfruit" },
   ];
 
   return (

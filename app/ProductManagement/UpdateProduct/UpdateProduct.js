@@ -199,7 +199,7 @@ export default function UpdateProduct({ productId, ProductData, refechData }) {
     { value: "Sprout", name: "Sprout" },
     { value: "Chopped", name: "Chopped" },
     { value: "Pulses", name: "Pulses" },
-    { value: "Organic", name: "Organic" },
+    { value: "Dryfruit", name: "Dryfruit" },
   ];
 
   return (
